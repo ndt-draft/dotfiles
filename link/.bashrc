@@ -23,3 +23,20 @@ function dotfiles() {
 }
 
 src
+
+if ! shopt -oq posix; then
+    if [ -f /usr/share/bash-completion/bash_completion ]; then
+          . /usr/share/bash-completion/bash_completion
+            elif [ -f /etc/bash_completion ]; then
+                  . /etc/bash_completion
+                    fi
+                  fi
+
+source /usr/local/share/chruby/chruby.sh
+export PATH="$PATH:$HOME/.composer/vendor/bin"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+export PATH=$HOME/mongodb/bin:$PATH
+
